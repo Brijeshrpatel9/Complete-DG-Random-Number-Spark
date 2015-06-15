@@ -1,0 +1,81 @@
+package org.finra.datagenerator
+
+import java._
+import java.util._
+
+import org.finra.datagenerator.consumer
+import org.finra.datagenerator.consumer.{DataPipe, DataConsumer}
+import org.finra.datagenerator.writer.{DefaultWriter, DataWriter}
+
+import scala.collection.JavaConverters._
+import scala.collection.mutable
+import scala.collection.mutable.Queue
+
+import org.apache.spark.{SparkConf, SparkContext}
+import org.finra.datagenerator.distributor.SearchDistributor
+import org.finra.datagenerator.engine.Frontier
+
+/**
+ * Created by Brijesh on 6/2/2015.
+ */
+
+class SparkDistributor extends SearchDistributor with java.io.Serializable {
+
+  val scalaQueue = new mutable.Queue[util.Map[String, String]]()
+  val javaQueue = new java.util.LinkedList(scalaQueue.asJava)
+
+  var mySparkContext: SparkContext = null
+
+  var dataConsumer: DataConsumer = null
+
+  var defaultDataConsumer: myDataConsumer = null
+
+  dataConsumer = defaultDataConsumer
+
+  def setSparkContext(spark: SparkContext): SparkContext = {
+    mySparkContext = spark
+    spark
+  }
+
+  def setDataConsumer(dataConsumer: DataConsumer): SearchDistributor = {
+    this.dataConsumer = dataConsumer
+    this
+  }
+
+  def distribute(frontierList: util.List[Frontier]): Unit = {
+
+    println("Frontier list size = " + (frontierList.size() - 1))
+
+    val conf: SparkConf = new SparkConf().setMaster("local[5]").setAppName("DG Spark Example")
+
+    val mySparkContext: SparkContext = new SparkContext(conf)
+
+    for(frontier <- frontierList.asScala) {
+
+      mySparkContext.parallelize(1 to EngineImplementation.NumberInEachFrontier).map {
+        i => searchWorker(frontier,javaQueue,true)
+          produceOutput()
+
+          val row = javaQueue.peek()
+          val values = row.values().toString
+          values
+
+      }.reduce(_ + _)
+    }
+  }
+
+  def produceOutput(): Unit = {
+    var lines: Int = 0
+
+    for(rows <- javaQueue.asScala) {
+
+      lines += dataConsumer.consume(rows)
+      println()
+    }
+  }
+
+  def searchWorker(frontier: Frontier, javaQueue: util.Queue[util.Map[String, String]], flag: Boolean): Unit = {
+
+    frontier.searchForScenarios(javaQueue, null)
+  }
+}
