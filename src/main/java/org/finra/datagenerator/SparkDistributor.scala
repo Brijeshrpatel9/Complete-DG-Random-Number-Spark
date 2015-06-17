@@ -51,7 +51,8 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     val mySparkContext: SparkContext = new SparkContext(conf)
 
     for(frontier <- frontierList.asScala) {
-
+      
+      // Parallelize the output using SparkContext object
       mySparkContext.parallelize(1 to EngineImplementation.NumberInEachFrontier).map {
         i => searchWorker(frontier,javaQueue,true)
           produceOutput()
