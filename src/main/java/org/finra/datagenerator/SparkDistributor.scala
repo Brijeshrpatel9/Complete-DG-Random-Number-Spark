@@ -42,6 +42,7 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     this
   }
 
+  // Distribiute the output to multiple instaces
   def distribute(frontierList: util.List[Frontier]): Unit = {
 
     println("Frontier list size = " + (frontierList.size() - 1))
