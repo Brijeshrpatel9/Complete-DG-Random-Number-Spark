@@ -52,7 +52,8 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     val conf: SparkConf = new SparkConf().setMaster("local[5]").setAppName("DG Spark Example")
 
     val mySparkContext: SparkContext = new SparkContext(conf)
-
+    
+    // Calling each frontier from frontier list
     for(frontier <- frontierList.asScala) {
       
       // Parallelize the output using SparkContext object
