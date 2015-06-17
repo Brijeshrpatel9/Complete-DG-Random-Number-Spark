@@ -38,6 +38,7 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     spark
   }
 
+  // Set Data Consumer to consume output
   def setDataConsumer(dataConsumer: DataConsumer): SearchDistributor = {
     this.dataConsumer = dataConsumer
     this
