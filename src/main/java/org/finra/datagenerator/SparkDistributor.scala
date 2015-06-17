@@ -21,6 +21,7 @@ import org.finra.datagenerator.engine.Frontier
 
 class SparkDistributor extends SearchDistributor with java.io.Serializable {
 
+  // Create Scala Queue and convert it into java list
   val scalaQueue = new mutable.Queue[util.Map[String, String]]()
   val javaQueue = new java.util.LinkedList(scalaQueue.asJava)
 
