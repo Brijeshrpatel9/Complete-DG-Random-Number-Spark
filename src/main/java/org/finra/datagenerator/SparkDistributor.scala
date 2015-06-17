@@ -69,6 +69,7 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     }
   }
 
+  // It calls consume method
   def produceOutput(): Unit = {
     var lines: Int = 0
 
