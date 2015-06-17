@@ -74,7 +74,6 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     var lines: Int = 0
 
     for(rows <- javaQueue.asScala) {
-
       lines += dataConsumer.consume(rows)
       println()
     }
