@@ -84,3 +84,16 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     frontier.searchForScenarios(javaQueue, null)
   }
 }
+
+<proxies>
+   <proxy>
+      <id>example-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+<host>70.39.231.35</host>
+      <port>8080</port>
+<!--      <username>proxyuser</username>
+      <password>somepassword</password>-->
+      <nonProxyHosts>*.finra.org</nonProxyHosts>
+    </proxy>
+  </proxies>
