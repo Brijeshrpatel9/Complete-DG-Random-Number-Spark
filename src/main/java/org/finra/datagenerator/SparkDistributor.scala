@@ -84,4 +84,3 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
     frontier.searchForScenarios(javaQueue, null)
   }
 }
-
