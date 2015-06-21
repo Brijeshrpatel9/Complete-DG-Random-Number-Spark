@@ -25,6 +25,7 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
   val scalaQueue = new mutable.Queue[util.Map[String, String]]()
   val javaQueue = new java.util.LinkedList(scalaQueue.asJava)
 
+  // Sparl Context
   var mySparkContext: SparkContext = null
 
   var dataConsumer: DataConsumer = null
