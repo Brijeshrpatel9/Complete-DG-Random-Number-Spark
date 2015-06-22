@@ -21,6 +21,7 @@ public class MainJava implements Serializable {
 
         EngineImplementation myEngineImplementation = new EngineImplementation();
 
+        // Create object of SparkDistributor
         SparkDistributor mySparkDistributor = new SparkDistributor();
 
         myDataConsumer DataConsumer = new myDataConsumer();
