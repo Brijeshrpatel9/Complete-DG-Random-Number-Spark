@@ -19,6 +19,7 @@ class myDataConsumer extends DataConsumer with java.io.Serializable {
     for (ent <- initialVars.entrySet) {
       dataPipe.getDataMap.put(ent.getKey, ent.getValue)
     }
+    
     // Writing Output
     dataWriter.writeOutput(dataPipe)
     1
