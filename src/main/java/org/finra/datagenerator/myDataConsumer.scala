@@ -22,6 +22,7 @@ class myDataConsumer extends DataConsumer with java.io.Serializable {
     
     // Writing Output
     dataWriter.writeOutput(dataPipe)
-    1
+    
+    1   // return Integer
   }
 }
