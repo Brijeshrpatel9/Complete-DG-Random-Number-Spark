@@ -14,7 +14,7 @@ public class MainJava implements Serializable {
 
         // You can define your own file "file.txt" in your directory with first line 1000000 and second line 100
 
-        // Read imput data
+        // Read imput data from file using ClassLoader and InputStream
         ClassLoader classLoader = MainJava.class.getClassLoader();
 
         InputStream is = new FileInputStream(classLoader.getResource("file/input.txt").getFile());
