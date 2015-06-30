@@ -16,7 +16,7 @@ class myDataWriter extends DataWriter with java.io.Serializable {
 
   def writeOutput(dataPipe: DataPipe): Unit = {
 
-    // System out as
+    // System out as a
     val os: OutputStream = System.out
     val objectOS = new ObjectOutputStream(os)
 
