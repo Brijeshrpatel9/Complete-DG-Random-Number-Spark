@@ -16,6 +16,7 @@ class myDataPipe extends DataPipe with  java.io.Serializable {
     dataMap
   }
 
+  // Data Pi[e]
   override def getPipeDelimited(outTemplate: Array[String]): String = {
     val sb = new StringBuilder(1024)
     for(s <- outTemplate) {
