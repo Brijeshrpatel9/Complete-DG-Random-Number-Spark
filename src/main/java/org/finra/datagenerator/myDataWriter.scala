@@ -14,6 +14,7 @@ class myDataWriter extends DataWriter with java.io.Serializable {
 
   val template: Array[String] = new Array[String](10)
   
+  // Write output to console
   def writeOutput(dataPipe: DataPipe): Unit = {
 
     // System out as a output Stream
