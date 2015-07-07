@@ -120,3 +120,11 @@
         </dependency>
     </dependencies>
 </project>
+
+<resource>
+  <directory>src/main/resources</directory>
+    <includes>
+      <include>*.conf</include>
+    </includes>
+  <targetPath>${project.build.directory}/classes</targetPath>
+</resource>
