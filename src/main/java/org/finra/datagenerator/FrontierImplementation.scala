@@ -5,8 +5,8 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 import scala.collection.JavaConverters._
 import scala.collection.immutable.Queue
-import org.finra.datagenerator.engine.Frontier
 
+import org.finra.datagenerator.engine.Frontier
 
 /**
  * Created by Brijesh on 5/28/2015.
