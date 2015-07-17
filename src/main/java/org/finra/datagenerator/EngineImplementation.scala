@@ -3,7 +3,6 @@ package org.finra.datagenerator
 import java.io.InputStream
 import java.util
 
-
 import scala.collection.mutable
 import scala.io
 
