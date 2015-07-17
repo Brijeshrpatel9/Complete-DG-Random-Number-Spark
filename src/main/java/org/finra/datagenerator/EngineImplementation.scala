@@ -9,7 +9,6 @@ import scala.collection.mutable
 
 import org.finra.datagenerator.distributor.SearchDistributor
 import org.finra.datagenerator.engine.{Engine, Frontier}
-
 import scala.io
 
 /**
