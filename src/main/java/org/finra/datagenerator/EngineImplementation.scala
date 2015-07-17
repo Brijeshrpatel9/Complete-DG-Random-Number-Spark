@@ -7,9 +7,10 @@ import org.apache.spark.SparkContext
 
 import scala.collection.mutable
 
+import scala.io
+
 import org.finra.datagenerator.distributor.SearchDistributor
 import org.finra.datagenerator.engine.{Engine, Frontier}
-import scala.io
 
 /**
  * Created by Brijesh on 5/26/2015.
