@@ -3,10 +3,11 @@ package org.finra.datagenerator
 import java.io.InputStream
 import java.util
 
-import org.apache.spark.SparkContext
 
 import scala.collection.mutable
 import scala.io
+
+import org.apache.spark.SparkContext
 
 import org.finra.datagenerator.distributor.SearchDistributor
 import org.finra.datagenerator.engine.{Engine, Frontier}
