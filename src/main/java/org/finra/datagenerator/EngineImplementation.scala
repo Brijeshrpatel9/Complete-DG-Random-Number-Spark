@@ -6,7 +6,6 @@ import java.util
 import org.apache.spark.SparkContext
 
 import scala.collection.mutable
-
 import scala.io
 
 import org.finra.datagenerator.distributor.SearchDistributor
