@@ -27,8 +27,7 @@ public class MainJava implements Serializable {
 
         mySparkDistributor.setDataConsumer(DataConsumer);
 
-
-        myEngineImplementation.setModelByInputFileStream(is);
+myEngineImplementation.setModelByInputFileStream(is);
 
         myEngineImplementation.process(mySparkDistributor);
 
