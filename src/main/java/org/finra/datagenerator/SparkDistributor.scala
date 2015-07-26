@@ -50,7 +50,8 @@ class SparkDistributor extends SearchDistributor with java.io.Serializable {
 
     println("Frontier list size = " + (frontierList.size() - 1))
 
-    // You can run program on multiple JVM by mentioning masterURL 
+    // You can run program on multiple JVM by mentioning masterURL
+    // Your MasterURL
     val conf: SparkConf = new SparkConf().setMaster("local[5]").setAppName("DG Spark Example")
 
     val mySparkContext: SparkContext = new SparkContext(conf)
